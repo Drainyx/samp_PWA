@@ -25,6 +25,8 @@ var appShellFiles = [
   './icons/icon-512.png'
 ];
 
+var contentToCache = appShellFiles;
+
 self.addEventListener('install', (e) => {
   console.log('[Service Worker] Install');
   e.waitUntil(

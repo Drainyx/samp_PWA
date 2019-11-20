@@ -30,6 +30,18 @@
     <!-- library for reading barcodes -->
     <script src="js/app.js" defer></script>
 
+    <link rel="manifest" href="scanette.webmanifest">
+
+    <script>
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', function(){
+                navigator.serviceWorker.register('./js/sw.js').then(function(reg){
+                    console.log('[Service Worker] Registration succesful');
+                }, function(err) {console.log('[Service Worker] Error in Registration', err);})
+            });
+        }
+    </script>
+
 </head>
 
 <body>
